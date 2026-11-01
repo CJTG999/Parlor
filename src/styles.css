@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,700&family=Outfit:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #14110e;
+  --color-ink-2: #211c17;
+  --color-paper: #f3eee4;
+  --color-muted: #b3a89a;
+  --color-brass: #e0a24a;
+  --color-wine: #9c3d4a;
+  --color-line: #3a322a;
+  --font-display: "Fraunces", "Iowan Old Style", Palatino, serif;
+  --font-sans: "Outfit", "Avenir Next", system-ui, sans-serif;
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    margin: 0;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brass);
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: var(--color-brass);
+    color: var(--color-ink);
+  }
+}
+
+.touch-layer {
+  display: none;
+  pointer-events: auto;
+}
+
+@media (pointer: coarse), (max-width: 800px) {
+  .touch-layer {
+    display: block;
+  }
+}
+
+.blindfold {
+  background: radial-gradient(ellipse at center, transparent 0%, #14110e 70%);
+  opacity: 0.88;
+}
+
+.flash-on {
+  background: var(--color-wine);
+  animation: lark-flash 0.55s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes lark-flash {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flash-on {
+    animation: none;
+    opacity: 0;
+  }
+}
