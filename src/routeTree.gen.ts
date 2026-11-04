@@ -10,11 +10,17 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as HouseRouteImport } from './routes/house'
 import { Route as ApiRtcRouteImport } from './routes/api/rtc'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HouseRoute = HouseRouteImport.update({
+  id: '/house',
+  path: '/house',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRtcRoute = ApiRtcRouteImport.update({
@@ -25,27 +31,31 @@ const ApiRtcRoute = ApiRtcRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/house': typeof HouseRoute
   '/api/rtc': typeof ApiRtcRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/house': typeof HouseRoute
   '/api/rtc': typeof ApiRtcRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/house': typeof HouseRoute
   '/api/rtc': typeof ApiRtcRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/rtc'
+  fullPaths: '/' | '/house' | '/api/rtc'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/rtc'
-  id: '__root__' | '/' | '/api/rtc'
+  to: '/' | '/house' | '/api/rtc'
+  id: '__root__' | '/' | '/house' | '/api/rtc'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HouseRoute: typeof HouseRoute
   ApiRtcRoute: typeof ApiRtcRoute
 }
 
@@ -56,6 +66,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/house': {
+      id: '/house'
+      path: '/house'
+      fullPath: '/house'
+      preLoaderRoute: typeof HouseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/rtc': {
@@ -70,6 +87,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HouseRoute: HouseRoute,
   ApiRtcRoute: ApiRtcRoute,
 }
 export const routeTree = rootRouteImport

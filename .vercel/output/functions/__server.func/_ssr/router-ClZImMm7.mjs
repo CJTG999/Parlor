@@ -1,9 +1,9 @@
 import { o as __toESM, r as __exportAll } from "../_runtime.mjs";
-import { K as require_react, _ as createFileRoute, b as require_jsx_runtime, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRoute, y as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { K as require_jsx_runtime, _ as createFileRoute, b as useRouter, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, q as require_react, v as createRootRoute } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as TriangleAlert } from "../_libs/lucide-react.mjs";
 import { a as number, c as union, i as literal, l as unknown, n as _enum, o as object, r as discriminatedUnion, s as string, t as number$1 } from "../_libs/zod.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DBAqBdov.js
-var router_DBAqBdov_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
+//#region node_modules/.nitro/vite/services/ssr/assets/router-ClZImMm7.js
+var router_ClZImMm7_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
@@ -331,9 +331,9 @@ function PreviewHostBridge() {
 	}, [router]);
 	return null;
 }
-var styles_default = "/assets/styles-DLXOyRJ4.css";
-var APP_NAME = "Larkspur";
-var Route$2 = createRootRoute({
+var styles_default = "/assets/styles-CGbYoGIT.css";
+var APP_NAME = "Parlor";
+var Route$3 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -344,7 +344,7 @@ var Route$2 = createRootRoute({
 			{ title: APP_NAME },
 			{
 				name: "description",
-				content: "Two-player first-person hide and seek in a night house."
+				content: "Two-player blackjack. Share a table code and play the house together."
 			},
 			{
 				name: "theme-color",
@@ -385,8 +385,16 @@ var Route$2 = createRootRoute({
 		})]
 	})
 });
-var $$splitComponentImporter = () => import("./routes-cKqaLqAc.mjs").then((n) => n.t);
-var Route$1 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
+var $$splitComponentImporter$1 = () => import("./routes-BDFzK8OK.mjs");
+var Route$2 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
+var $$splitComponentImporter = () => import("./house-9LOLfGd4.mjs").then((n) => n.t);
+var Route$1 = createFileRoute("/house")({
+	component: lazyRouteComponent($$splitComponentImporter, "component"),
+	head: () => ({ meta: [{ title: "Larkspur" }, {
+		name: "description",
+		content: "Two-player first-person hide and seek in a night house."
+	}] })
+});
 /**
 * Migration bookkeeping shared by the two appliers — `scripts/migrate.mjs`
 * (deploy, `readdir`) and `src/lib/db.ts` (PGLite preview, `import.meta.glob`).
@@ -720,18 +728,23 @@ var Route = createFileRoute("/api/rtc")({ server: { handlers: {
 	POST: handle
 } } });
 var rootRouteChildren = {
-	IndexRoute: Route$1.update({
+	IndexRoute: Route$2.update({
 		id: "/",
 		path: "/",
-		getParentRoute: () => Route$2
+		getParentRoute: () => Route$3
+	}),
+	HouseRoute: Route$1.update({
+		id: "/house",
+		path: "/house",
+		getParentRoute: () => Route$3
 	}),
 	ApiRtcRoute: Route.update({
 		id: "/api/rtc",
 		path: "/api/rtc",
-		getParentRoute: () => Route$2
+		getParentRoute: () => Route$3
 	})
 };
-var routeTree = Route$2._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$3._addFileChildren(rootRouteChildren)._addFileTypes();
 function getRouter() {
 	return createRouter({
 		routeTree,
@@ -740,4 +753,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { getRouter, router_DBAqBdov_exports as t };
+export { getRouter, router_ClZImMm7_exports as t };

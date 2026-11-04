@@ -1,4 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { GameApp } from "@/game/GameApp";
+import { Parlor } from "@/bj/Parlor";
 
-export const Route = createFileRoute("/")({ component: GameApp });
+export const Route = createFileRoute("/")({ component: Parlor });

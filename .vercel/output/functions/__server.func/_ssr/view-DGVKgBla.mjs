@@ -1,6 +1,6 @@
-import { n as LAMPS, r as VISUALS } from "./routes-cKqaLqAc.mjs";
+import { n as LAMPS, r as VISUALS } from "./house-9LOLfGd4.mjs";
 import { S as Vector3, _ as PointLight, a as CircleGeometry, b as SphereGeometry, c as DirectionalLight, d as HemisphereLight, f as Mesh, g as PerspectiveCamera, h as Object3D, i as CapsuleGeometry, l as FogExp2, m as MeshLambertMaterial, n as AmbientLight, o as Color, p as MeshBasicMaterial, r as BoxGeometry, s as CylinderGeometry, t as WebGLRenderer, u as Group, v as SRGBColorSpace, x as SpotLight, y as Scene } from "../_libs/three.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/view-CIN6pBUV.js
+//#region node_modules/.nitro/vite/services/ssr/assets/view-DGVKgBla.js
 /** Three.js view of Larkspur. The sim owns yaw/pitch; this only draws them.
 *  Camera rotation.y = yaw, rotation.x = pitch (order YXZ) so look direction
 *  matches basis() in logic.ts: yaw 0 looks down world -Z.

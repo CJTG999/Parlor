@@ -1,5 +1,5 @@
 import { o as __toESM } from "../_runtime.mjs";
-import { K as require_react } from "./@tanstack/react-router+[...].mjs";
+import { q as require_react } from "./@tanstack/react-router+[...].mjs";
 //#region node_modules/lucide-react/dist/esm/shared/src/utils.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 /**
@@ -172,6 +172,29 @@ var Lamp = createLucideIcon("lamp", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var LogOut = createLucideIcon("log-out", [
+	["path", {
+		d: "M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4",
+		key: "1uf3rs"
+	}],
+	["polyline", {
+		points: "16 17 21 12 16 7",
+		key: "1gabdz"
+	}],
+	["line", {
+		x1: "21",
+		x2: "9",
+		y1: "12",
+		y2: "12",
+		key: "1uyos4"
+	}]
+]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Play = createLucideIcon("play", [["polygon", {
 	points: "6 3 20 12 6 21 6 3",
 	key: "1oa8hb"
@@ -279,4 +302,4 @@ var Users = createLucideIcon("users", [
 	}]
 ]);
 //#endregion
-export { Play as a, EyeOff as c, Shuffle as i, Copy as l, TriangleAlert as n, Lamp as o, Timer as r, Eye as s, Users as t, ArrowLeft as u };
+export { Play as a, Eye as c, ArrowLeft as d, Shuffle as i, EyeOff as l, TriangleAlert as n, LogOut as o, Timer as r, Lamp as s, Users as t, Copy as u };
